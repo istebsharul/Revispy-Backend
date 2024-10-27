@@ -25,3 +25,4 @@ Thumbs.db
 # Other files you want to ignore
 *.tgz
 *.zip
+.vercel
