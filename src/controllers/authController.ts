@@ -19,6 +19,13 @@ export const registerHandler: RequestHandler = async (req: Request, res: Respons
     const verificationToken = signToken({ email }, { expiresIn: '1h' });
     const verificationCode = generateVerificationCode();
     
+    const user = await User.findOne({email});
+
+    if(user){
+        res.status(500).json({message:'User already exist!'});
+        return;
+    }
+
     const newUser: IUser = new User({ name, email, password: hashedPassword, verificationToken, verificationCode });
 
     try {
