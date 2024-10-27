@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Allow requests only from this origin
+  origin: 'https://revispy-frontend-tau.vercel.app', // Allow requests only from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));

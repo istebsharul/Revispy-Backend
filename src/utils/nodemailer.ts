@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendVerificationEmail = async (email: string,id:string, verificationToken: string, verificationCode:string) => {
-    const verificationUrl = `http://localhost:5173/verify-email?id=${id}&token=${verificationToken}&code=${verificationCode}`;
+    const verificationUrl = `https://revispy-backend.vercel.app/verify-email?id=${id}&token=${verificationToken}&code=${verificationCode}`;
 
     const mailOptions = {
         from: process.env.SMTP_USER,
