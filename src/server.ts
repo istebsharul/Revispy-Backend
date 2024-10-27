@@ -25,6 +25,11 @@ app.use(cookieParser());
 // Routes
 app.use('/api/auth', authRoutes);
 
+app.get('/health', (req, res) => {
+  res.status(200).json({ message: 'OK' });
+});
+
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
