@@ -16,6 +16,9 @@ app.use(cors({
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
 
+app.get('/health', (req, res) => {
+  res.status(200).json({ message: 'OK' });
+});
 
 connectDatabase();
 // Middleware
@@ -24,10 +27,6 @@ app.use(cookieParser());
 
 // Routes
 app.use('/api/auth', authRoutes);
-
-app.get('/health', (req, res) => {
-  res.status(200).json({ message: 'OK' });
-});
 
 
 // Start the server
